@@ -6,10 +6,18 @@ var zlib = require('zlib');
 module.exports = {
     store: function (options, callback) {
         return new Promise(function (resolve, reject) {
-            AWS.config.credentials = new AWS.SharedIniFileCredentials({
-                filename: options.credentials,
-                profile: options.profile
-            });
+            var envPrefix = options.envPrefix ? options.envPrefix + '_' : '',
+                credentials;
+
+            if (process.env[envPrefix + 'ACCESS_KEY_ID'] && process.env[envPrefix + 'SECRET_ACCESS_KEY']) {
+                credentials = new AWS.EnvironmentCredentials(options.envPrefix);
+            } else {
+                credentials = new AWS.SharedIniFileCredentials({
+                    filename: options.credentials,
+                    profile: options.profile
+                });
+            }
+            AWS.config.credentials = credentials;
             
             var s3object = new AWS.S3({
                 params: {

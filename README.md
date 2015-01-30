@@ -72,6 +72,12 @@ Default value: `'tmp/frequency_graph.html'`
 
 Where to write the report.
 
+#### options.envPrefix
+Type: `String`
+Default value: `''`
+
+Prefix to use for AWS environment variables.
+
 #### options.credentials
 Type: `String`
 Default value: `null`

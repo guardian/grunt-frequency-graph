@@ -29,6 +29,7 @@ module.exports = function(grunt) {
       verbose: false,
       credentials: null,
       profile: null,
+      envPrefix: '',
       bucket: 'asset-frequency-graph',
       bucketKey: 'index.html'
     });
