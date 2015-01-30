@@ -17,9 +17,11 @@ module.exports = {
                     Key: options.bucketKey
                 }
             });
-            var stream = fs.createReadStream(options.destination).pipe(zlib.createGzip());
+            var stream = fs.createReadStream(options.destination);
             s3object.upload({
-                Body: stream
+                Body: stream,
+                ContentType: 'text/html; charset=UTF-8',
+                ACL:'public-read'
             })
             .send(function (err, data) {
                 if (err) {
