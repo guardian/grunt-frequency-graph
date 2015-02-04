@@ -39,7 +39,7 @@
   ],
   "dependencies": {
     "asset-frequency-graph": "^0.2.3",
-    "aws-sdk": "^2.1.8",
+    "aws-sdk": "git+https://github.com/piuccio/aws-sdk-js.git",
     "es6-promise": "^2.0.1"
   }
 }

@@ -1,17 +1,19 @@
 var AWS = require('aws-sdk');
 var Promise = require('es6-promise').Promise;
 var fs = require('fs');
-var zlib = require('zlib');
 
 module.exports = {
     store: function (options, callback) {
+        console.log('please store', options);
         return new Promise(function (resolve, reject) {
             var envPrefix = options.envPrefix ? options.envPrefix + '_' : '',
                 credentials;
 
             if (process.env[envPrefix + 'ACCESS_KEY_ID'] && process.env[envPrefix + 'SECRET_ACCESS_KEY']) {
+                console.log('using AWS environment credentials');
                 credentials = new AWS.EnvironmentCredentials(options.envPrefix);
             } else {
+                console.log('using AWS shared ini file credentials');
                 credentials = new AWS.SharedIniFileCredentials({
                     filename: options.credentials,
                     profile: options.profile
@@ -38,6 +40,7 @@ module.exports = {
                     resolve(data);
                 }
             });
+            console.log('request sent');
         });
     }
 };
