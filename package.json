@@ -1,7 +1,7 @@
 {
   "name": "grunt-frequency-graph",
   "description": "Generate a frequency graph of static assets changes",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "homepage": "https://github.com/guardian/grunt-frequency-graph",
   "author": {
     "name": "Fabio Crisci",
@@ -38,7 +38,7 @@
     "gruntplugin"
   ],
   "dependencies": {
-    "asset-frequency-graph": "^0.2.2",
+    "asset-frequency-graph": "^0.2.3",
     "aws-sdk": "^2.1.8",
     "es6-promise": "^2.0.1"
   }
