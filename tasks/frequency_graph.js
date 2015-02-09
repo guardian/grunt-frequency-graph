@@ -31,7 +31,11 @@ module.exports = function(grunt) {
       profile: null,
       envPrefix: '',
       bucket: 'asset-frequency-graph',
-      bucketKey: 'index.html'
+      bucketKey: 'index.html',
+      fromDisk: false,
+      fullPage: true,
+      costDays: 15,
+      distribution: null
     });
 
     var done = this.async();

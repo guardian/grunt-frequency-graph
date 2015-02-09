@@ -54,6 +54,18 @@ Default value: `['index.js']`
 
 List of root files. The tool will analyze the dependencies of these files.
 
+#### options.costDays
+Type: `Number`
+Default value: `15`
+
+Generate the cost of packages in the last days.
+
+#### options.distribution
+Type: `Object`
+Default value: `{returningVisitors: {}, uniqueVisitors: Number}`
+
+The distribution used to generate the cost function. Should contain the number of visitors and their returning pattern.
+
 #### options.requireConfig
 Type: `String`
 Default value: `['requirejs.js']`
@@ -108,11 +120,23 @@ Default value: `null`
 
 Limit the number of commits analyzed. `null` for no limit.
 
+#### options.fullPage
+Type: `Boolean`
+Default value: `'true'`
+
+Generate a valid HTML page. If `false` generates only the body markup, useful when including the report in another page.
+
 #### options.verbose
 Type: `Boolean`
 Default value: `'false'`
 
 Generate a more verbose result, including the full history of the repository. Be careful, the report might be huge.
+
+#### options.fromDisk
+Type: `Boolean`
+Default value: `'false'`
+
+Cache the git history on disk. Useful only for debugging.
 
 
 ## Contributing
@@ -120,4 +144,5 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+* 0.1.6 Cost function
 * 0.1.0 Initial commit 
