@@ -1,7 +1,7 @@
 {
   "name": "grunt-frequency-graph",
   "description": "Generate a frequency graph of static assets changes",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "homepage": "https://github.com/guardian/grunt-frequency-graph",
   "author": {
     "name": "Fabio Crisci",
